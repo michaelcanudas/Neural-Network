@@ -7,6 +7,6 @@ public class Program
     public static void Main(string[] args)
     {
         Network network = new Network(3, 3);
-        int[] outputs = network.Compute(0, 1, 0);
+        double[] outputs = network.Compute(0, 1, 0);
     }
 }

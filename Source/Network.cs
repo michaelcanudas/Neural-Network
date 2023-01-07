@@ -18,9 +18,9 @@ public class Network
         }
     }
 
-    public int[] Compute(params int[] inputs)
+    public double[] Compute(params double[] inputs)
     {
-        int[] outputs = inputs;
+        double[] outputs = inputs;
 
         Layer? next = Start;
         while (next is not null)

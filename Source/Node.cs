@@ -5,21 +5,21 @@
 /// </Node>
 public class Node
 {
-    public int[] Weights;
-    public int Bias;
+    public double[] Weights;
+    public double Bias;
 
-    public Node(int[] weights, int bias)
+    public Node(double[] weights, double bias)
     {
         Weights = weights;
         Bias = bias;
     }
 
-    public int Compute(int[] inputs)
+    public double Compute(double[] inputs)
     {
-        int output = 0;
+        double output = Bias;
         for (int i = 0; i < inputs.Length; i++)
         {
-            output += inputs[i] * Weights[i] + Bias;
+            output += inputs[i] * Weights[i];
         }
 
         output = ReLU(output);
@@ -27,7 +27,7 @@ public class Node
         return output;
     }
 
-    private int ReLU(int value)
+    private double ReLU(double value)
     {
         return Math.Max(0, value);
     }

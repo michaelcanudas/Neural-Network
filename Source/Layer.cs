@@ -15,13 +15,13 @@ public class Layer
         Nodes = new Node[size];
         for (int i = 0; i < size; i++)
         {
-            Nodes[i] = new Node(new int[] { 0, 0, 0 }, 0);
+            Nodes[i] = new Node(new double[] { 0, 0, 0 }, 0);
         }
     }
 
-    public int[] Compute(int[] inputs)
+    public double[] Compute(double[] inputs)
     {
-        int[] outputs = new int[Nodes.Length];
+        double[] outputs = new double[Nodes.Length];
         for (int i = 0; i < outputs.Length; i++)
         {
             outputs[i] = Nodes[i].Compute(inputs);
