@@ -38,14 +38,20 @@
 
     private void Train(double[][] inputs, double[][] outputs)
     {
-        double cost = 0;
-        for (int i = 0; i < inputs.Length; i++)
-        {
-            cost += Cost(inputs[i], outputs[i]);
-        }
-        cost /= inputs.Length;
+        double cost = AverageCost(inputs, outputs);
 
         // do things with average cost
+    }
+
+    private double AverageCost(double[][] inputs, double[][] outputs)
+    {
+        double totalCost = 0;
+        for (int i = 0; i < inputs.Length; i++)
+        {
+            totalCost += Cost(inputs[i], outputs[i]);
+        }
+
+        return totalCost /= inputs.Length;
     }
 
     // Cost = (Σ |p - o|) / n

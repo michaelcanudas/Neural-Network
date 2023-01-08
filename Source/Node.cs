@@ -27,4 +27,9 @@
     {
         return Math.Max(0, value);
     }
+
+    private double DReLU(double value)
+    {
+        return value >= 0 ? 1 : 0;
+    }
 }
