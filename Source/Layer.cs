@@ -1,9 +1,4 @@
-﻿/// <Layer>
-/// Layer is a linked-list, which contains the
-/// next (possibly null) element. It also contains
-/// the Nodes which are used in computation.
-/// </Layer>
-public class Layer
+﻿public class Layer
 {
     public Layer? Next;
     Node[] Nodes;

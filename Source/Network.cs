@@ -1,8 +1,4 @@
-﻿/// <Network>
-/// Network contains the linked-list of Layers, as
-/// well as the start of the Compute chain.
-/// </Network>
-public class Network
+﻿public class Network
 {
     Layer Start;
 
@@ -30,5 +26,40 @@ public class Network
         }
 
         return outputs;
+    }
+
+    public void Train(double[][] inputs, double[][] outputs, int iterations)
+    {
+        for (int i = 0; i < iterations; i++)
+        {
+            Train(inputs, outputs);
+        }
+    }
+
+    private void Train(double[][] inputs, double[][] outputs)
+    {
+        double cost = 0;
+        for (int i = 0; i < inputs.Length; i++)
+        {
+            cost += Cost(inputs[i], outputs[i]);
+        }
+        cost /= inputs.Length;
+
+        // do things with average cost
+    }
+
+    // Cost = (Σ |p - o|) / n
+    private double Cost(double[] inputs, double[] outputs)
+    {
+        double[] predictions = Compute(inputs);
+
+        double error = 0;
+        for (int i = 0; i < predictions.Length; i++)
+        {
+            error += Math.Abs(predictions[i] - outputs[i]);
+        }
+        error /= predictions.Length;
+
+        return error;
     }
 }

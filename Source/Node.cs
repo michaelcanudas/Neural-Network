@@ -1,9 +1,4 @@
-﻿/// <Node>
-/// Node contains the weights, bias, and
-/// activation functions necessary for computing
-/// a singular output based on a set of input values.
-/// </Node>
-public class Node
+﻿public class Node
 {
     public double[] Weights;
     public double Bias;
@@ -27,6 +22,7 @@ public class Node
         return output;
     }
 
+    // ReLU = { 0, x < 0; x, x >= 0 }
     private double ReLU(double value)
     {
         return Math.Max(0, value);
